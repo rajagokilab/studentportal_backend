@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Admin Login{% endblock %}
+{% block content %}
+<h2 class="text-center text-warning mb-4">Admin Login</h2>
+<form method="POST" class="mx-auto" style="max-width:400px;">
+    <input type="text" name="username" class="form-control mb-3" placeholder="Username" required>
+    <input type="password" name="password" class="form-control mb-3" placeholder="Password" required>
+    <button class="btn btn-warning w-100">Login</button>
+</form>
+{% endblock %}

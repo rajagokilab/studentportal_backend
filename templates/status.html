@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Application Status{% endblock %}
+
+{% block content %}
+<h2>Application Status</h2>
+
+{% if student %}
+<div class="card mt-4">
+    <div class="card-body">
+        <h5 class="card-title">{{ student.name }}</h5>
+        <p class="card-text"><strong>Email:</strong> {{ student.email }}</p>
+        <p class="card-text"><strong>Phone:</strong> {{ student.phone }}</p>
+        <p class="card-text"><strong>Course:</strong> {{ student.course }}</p>
+        <p class="card-text"><strong>Status:</strong> 
+            {% if student.status == 'Approved' %}
+                <span class="text-success">{{ student.status }}</span>
+            {% elif student.status == 'Rejected' %}
+                <span class="text-danger">{{ student.status }}</span>
+            {% else %}
+                <span class="text-warning">{{ student.status }}</span>
+            {% endif %}
+        </p>
+    </div>
+</div>
+{% else %}
+<p>No application found.</p>
+{% endif %}
+{% endblock %}
